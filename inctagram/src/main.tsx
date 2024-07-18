@@ -1,4 +1,4 @@
-import './styles/_colors.scss'
+import './styles/index.scss'
 import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/700.css'
 

@@ -5,15 +5,15 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
- 
+    
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "node", // Изменено с "bundler" на "node"
     "allowImportingTsExtensions": false,
-    "resolveJsonModule": true,
+    "resolveJsonModule": true, // Оставлено, так как теперь используется "node"
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
- 
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
