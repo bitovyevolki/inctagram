@@ -1,0 +1,101 @@
+/* Reset button styles */
+button {
+  all: unset;
+}
+
+.label {
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: row;
+  gap: 0 12px;
+  align-items: center;
+  justify-content: center;
+
+  width: max-content;
+}
+
+.checkbox {
+  all: unset;
+
+  cursor: pointer;
+
+  position: relative;
+
+  width: 18px;
+  height: 18px;
+
+  &::before,
+  &::after {
+    content: '';
+
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+
+    width: 36px;
+    height: 36px;
+
+    background-color: transparent;
+    border-radius: 50%;
+
+    transition: 0.3s;
+  }
+
+  &:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    background-color: var(--color-dark-500);
+  }
+
+  &:active::after,
+  &:focus-visible::before {
+    transform: translate(-50%, -50%) scale(1);
+    background-color: var(--color-dark-100);
+    transition: 0s;
+  }
+
+  &:disabled::before,
+  &:disabled::after {
+    transform: translate(-50%, -50%) scale(0);
+    background-color: transparent;
+  }
+
+  .frame {
+    position: absolute;
+    z-index: 5;
+    inset: 0;
+
+    box-sizing: border-box;
+
+    border: 2px solid var(--color-light-900);
+    border-radius: 2px;
+  }
+
+  .indicator {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+
+    fill: var(--color-light-100);
+  }
+
+  &:disabled .frame {
+    border-color: var(--color-dark-100);
+  }
+
+  &:disabled .indicator {
+    fill: var(--color-dark-100);
+  }
+}
+
+.label.disabled {
+  cursor: auto;
+  color: var(--color-dark-100);
+
+  .checkbox:disabled {
+    cursor: default;
+  }
+}
