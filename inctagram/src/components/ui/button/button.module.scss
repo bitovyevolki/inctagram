@@ -14,13 +14,44 @@
 }
 
 .primary {
-  background-color: var(--color-accent-500);
+  width: 182px;
+  height: 36px;
+  padding: 6px 24px !important;
+
+  color: var(--color-light-100);
+
+  background-color: var(--color-info-500);
 }
 
 .secondary {
-  background-color: var(--color-dark-300);
+  width: 182px;
+  height: 36px;
+  padding: 6px 24px !important;
+
+  color: var(--color-light-100);
+
+  background-color: var(--color-dark-500);
 }
 
-.fullWidth {
-  width: 100%;
+.outline {
+  width: 182px;
+  height: 36px;
+  padding: 6px 24px !important;
+
+  color: var(--color-info-500);
+
+  background: none;
+  border: 1px solid var(--color-info-500);
+}
+
+.textbutton {
+  width: 100px;
+  height: 36px;
+  padding: 6px 24px !important;
+
+  color: var(--color-info-500);
+
+  background: none;
+  border: none;
+  box-shadow: none;
 }

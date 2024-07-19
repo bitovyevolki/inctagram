@@ -8,7 +8,7 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     variant: {
-      options: ['primary', 'secondary'],
+      options: ['primary', 'secondary', 'outline', 'textbutton'],
       control: { type: 'radio' },
     },
   },
@@ -20,7 +20,7 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   args: {
     variant: 'primary',
-    children: 'Primary Button',
+    children: 'Button',
     disabled: false,
   },
 }
@@ -28,7 +28,7 @@ export const Default: Story = {
 export const Active: Story = {
   args: {
     variant: 'secondary',
-    children: 'Secondary Button',
+    children: 'Button',
     disabled: false,
   },
 }
@@ -36,7 +36,7 @@ export const Active: Story = {
 export const Hover: Story = {
   args: {
     variant: 'primary',
-    children: 'Full Width Primary Button',
+    children: 'Button',
     disabled: false,
     fullWidth: true,
   },
@@ -45,7 +45,7 @@ export const Hover: Story = {
 export const Focus: Story = {
   args: {
     variant: 'primary',
-    children: 'Full Width Primary Button',
+    children: ' Button',
     disabled: false,
     fullWidth: true,
   },
@@ -54,8 +54,8 @@ export const Focus: Story = {
 export const Disabled: Story = {
   args: {
     variant: 'primary',
-    children: 'Full Width Primary Button',
-    disabled: false,
+    children: 'Button',
+    disabled: true,
     fullWidth: true,
   },
 }
