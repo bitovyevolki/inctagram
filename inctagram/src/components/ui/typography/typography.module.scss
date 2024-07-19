@@ -1,0 +1,64 @@
+@mixin typography-font($fontSize, $fontWeight, $lineHeight) {
+  margin: 0;
+
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+  color: var(--color-light-100);
+}
+
+.h1 {
+  @include typography-font(var(--font-size-xxl), var(--font-weight-bold), var(--line-height-l));
+}
+
+.h2 {
+  @include typography-font(var(--font-size-xl), var(--font-weight-bold), var(--line-height-l));
+}
+
+.h3 {
+  @include typography-font(var(--font-size-l), var(--font-weight-bold), var(--line-height-m));
+}
+
+.h4 {
+  @include typography-font(var(--font-size-m), var(--font-weight-bold), var(--line-height-m));
+}
+
+.body1 {
+  @include typography-font(var(--font-size-m), var(--font-weight-regular), var(--line-height-m));
+}
+
+.body2 {
+  @include typography-font(var(--font-size-s), var(--font-weight-regular), var(--line-height-m));
+}
+
+.subTitle1 {
+  @include typography-font(var(--font-size-m), var(--font-weight-bold), var(--line-height-m));
+}
+
+.subTitle2 {
+  @include typography-font(var(--font-size-s), var(--font-weight-bold), var(--line-height-m));
+}
+
+.caption {
+  @include typography-font(var(--font-size-xs), var(--font-weight-regular), var(--line-height-s));
+}
+
+.overline {
+  @include typography-font(var(--font-size-xs), var(--font-weight-bold), var(--line-height-s));
+}
+
+.link1,
+.link1:visited {
+  @include typography-font(var(--font-size-s), var(--font-weight-bold), var(--line-height-m));
+
+  color: var(--color-info-500);
+  text-decoration: underline;
+}
+
+.link2,
+.link2:visited {
+  @include typography-font(var(--font-size-xs), var(--font-weight-bold), var(--line-height-m));
+
+  color: var(--color-info-500);
+  text-decoration: underline;
+}
