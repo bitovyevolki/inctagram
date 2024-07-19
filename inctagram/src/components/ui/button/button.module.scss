@@ -1,10 +1,6 @@
 .button {
   all: unset;
-
-  cursor: pointer;
-
   box-sizing: border-box;
-
   font-family: inherit;
   color: inherit;
 
@@ -14,13 +10,124 @@
 }
 
 .primary {
-  background-color: var(--color-accent-500);
+  cursor: pointer;
+
+  width: 182px;
+  height: 36px;
+  padding: 6px 24px !important;
+
+  color: var(--color-light-100);
+
+  background-color: var(--color-info-500);
+  border: none;
+
+  &:active {
+    background-color: var(--color-info-700);
+  }
+
+  &:hover {
+    background-color: var(--color-info-100);
+  }
+
+  &:focus-visible {
+    color: var(--color-info-700);
+    outline: none;
+  }
+
+  &:disabled {
+    color: var(--color-light-900);
+    background-color: var(--color-info-900);
+  }
 }
 
 .secondary {
-  background-color: var(--color-dark-300);
+  cursor: pointer;
+
+  width: 182px;
+  height: 36px;
+  padding: 6px 24px !important;
+
+  color: var(--color-light-100);
+
+  background-color: var(--color-dark-500);
+  border: none;
+
+  &:active {
+    background-color: var(--color-dark-700);
+  }
+
+  &:hover {
+    background-color: var(--color-dark-300);
+  }
+
+  &:focus-visible {
+    background-color: var(--color-dark-300);
+    outline: none;
+  }
+
+  &:disabled {
+    color: var(--color-light-900);
+    background-color: var(--color-dark-500);
+  }
 }
 
-.fullWidth {
-  width: 100%;
+.outline {
+  cursor: pointer;
+
+  width: 182px;
+  height: 36px;
+  padding: 6px 24px !important;
+
+  color: var(--color-info-500);
+
+  background: transparent;
+  border: 1px solid var(--color-info-500);
+
+  &:active {
+    color: var(--color-info-700);
+    border: 1px solid var(--color-info-700);
+  }
+
+  &:hover {
+    color: var(--color-info-100);
+  }
+
+  &:focus-visible {
+    border: 2px solid var(--color-info-700);
+  }
+
+  &:disabled {
+    color: var(--color-info-900);
+    border: 2px solid var(--color-info-900);
+  }
+}
+
+.textbutton {
+  pointer-events: none;
+
+  width: 100px;
+  height: 36px;
+  padding: 6px 24px !important;
+
+  color: var(--color-info-500);
+
+  background: none;
+  border: none;
+  box-shadow: none;
+
+  &:active {
+    color: var(--color-info-700);
+  }
+
+  &:hover {
+    color: var(--color-info-100);
+  }
+
+  &:focus-visible {
+    border: 2px solid var(--color-info-700);
+  }
+
+  &:disabled {
+    color: var(--color-info-900);
+  }
 }
