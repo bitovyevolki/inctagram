@@ -17,7 +17,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Primary: Story = {
+export const Default: Story = {
   args: {
     variant: 'primary',
     children: 'Primary Button',
@@ -25,7 +25,7 @@ export const Primary: Story = {
   },
 }
 
-export const Secondary: Story = {
+export const Active: Story = {
   args: {
     variant: 'secondary',
     children: 'Secondary Button',
@@ -33,7 +33,25 @@ export const Secondary: Story = {
   },
 }
 
-export const FullWidth: Story = {
+export const Hover: Story = {
+  args: {
+    variant: 'primary',
+    children: 'Full Width Primary Button',
+    disabled: false,
+    fullWidth: true,
+  },
+}
+
+export const Focus: Story = {
+  args: {
+    variant: 'primary',
+    children: 'Full Width Primary Button',
+    disabled: false,
+    fullWidth: true,
+  },
+}
+
+export const Disabled: Story = {
   args: {
     variant: 'primary',
     children: 'Full Width Primary Button',
