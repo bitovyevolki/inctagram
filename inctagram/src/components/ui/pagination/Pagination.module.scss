@@ -1,0 +1,68 @@
+.pagination {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  max-width: 100%;
+}
+
+.pages {
+  display: flex;
+  align-items: center;
+}
+
+.page {
+  cursor: pointer;
+
+  margin-right: 8px;
+  padding: 2px 8px;
+
+  color: var(--color-light-100);
+
+  border-radius: 2px;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  &:hover {
+    background-color: var(--color-dark-500);
+  }
+}
+
+.active {
+  color: var(--color-dark-900) !important;
+  background-color: var(--color-light-100) !important;
+}
+
+.icon {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & path {
+    fill: var(--color-light-100);
+  }
+}
+
+.ellipsis {
+  cursor: default;
+
+  display: flex;
+  align-items: flex-end;
+
+  margin: 0 8px;
+
+  vertical-align: bottom;
+}
+
+.leftArrow {
+  margin-right: 10px;
+}
+
+.rightArrow {
+  margin: 0 10px;
+}
