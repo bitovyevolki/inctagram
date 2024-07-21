@@ -2,8 +2,28 @@ import clsx from 'clsx'
 
 import s from './Pagination.module.scss'
 
+import { IOption, Select } from '../select'
 import { EllipsisSvg, LeftArrowSvg, RightArrowSvg } from './icons/icons'
 import { ELLIPSIS, usePagination } from './usePagination'
+
+const options: IOption[] = [
+  {
+    label: '10',
+    value: '10',
+  },
+  {
+    label: '20',
+    value: '20',
+  },
+  {
+    label: '50',
+    value: '50',
+  },
+  {
+    label: '100',
+    value: '100',
+  },
+]
 
 interface IPaginationProps {
   disabled: boolean
@@ -21,7 +41,7 @@ export const Pagination = ({
   portionSize,
   totalCount,
 }: IPaginationProps) => {
-  const { paginationRange } = usePagination({ page, portionSize, totalCount })
+  const paginationRange = usePagination({ page, portionSize, totalCount })
 
   const onNextHandler = () => {
     onChangePage(page + 1)
@@ -31,9 +51,18 @@ export const Pagination = ({
     onChangePage(page - 1)
   }
 
+  const onChangePortionSizeHandler = (size: string) => {
+    onChangePortionSize(Number(size))
+  }
+
   return (
     <div className={s.pagination}>
-      <span className={clsx(s.icon, s.leftArrow)} onClick={onNextHandler}>
+      <span
+        className={clsx(s.icon, s.leftArrow, {
+          [s.disabledIcon]: page === 1,
+        })}
+        onClick={onPrevHandler}
+      >
         <LeftArrowSvg />
       </span>
       <div className={s.pages}>
@@ -55,11 +84,23 @@ export const Pagination = ({
           )
         })}
       </div>
-      <span className={clsx(s.icon, s.rightArrow)} onClick={onPrevHandler}>
+      <span
+        className={clsx(s.icon, s.rightArrow, {
+          [s.disabledIcon]: paginationRange[paginationRange.length - 1] === page,
+        })}
+        onClick={onNextHandler}
+      >
         <RightArrowSvg />
       </span>
       <span>Show</span>
-      <div>select</div>
+      <div className={s.selectBox}>
+        <Select
+          onValueChange={onChangePortionSizeHandler}
+          options={options}
+          value={String(portionSize)}
+          variant={'small'}
+        />
+      </div>
       <span>on page</span>
     </div>
   )

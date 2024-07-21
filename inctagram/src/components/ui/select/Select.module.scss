@@ -11,6 +11,20 @@
   color: var(--color-light-900);
 }
 
+.large {
+  gap: 60px;
+  padding: 4px 14px;
+}
+
+.small {
+  gap: 28px;
+  padding: 0 6px;
+
+  & .Icon {
+    top: 0;
+  }
+}
+
 .SelectContent {
   overflow: hidden;
 
@@ -36,11 +50,9 @@
   align-items: center;
   justify-content: center;
 
-  padding: 4px 14px;
-
   font-size: 16px;
   line-height: var(--line-height-m);
-  color: var(--color-light-900);
+  color: var(--color-light-100);
 
   background-color: var(--color-dark-900);
   border: 1px solid var(--color-dark-100);
@@ -67,14 +79,6 @@
   }
 }
 
-.large {
-  gap: 60px;
-}
-
-.small {
-  gap: 24px;
-}
-
 .disabled {
   pointer-events: none;
   color: var(--color-dark-100);
@@ -90,8 +94,6 @@
   flex-wrap: nowrap;
   align-items: center;
   justify-content: flex-start;
-
-  padding: 4px 14px;
 
   font-size: 16px;
   line-height: var(--line-height-m);

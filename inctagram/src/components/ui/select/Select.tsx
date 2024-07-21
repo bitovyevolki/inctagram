@@ -5,8 +5,6 @@ import clsx from 'clsx'
 
 import s from './Select.module.scss'
 
-import { ArrowDown, ArrowUp } from './icons/icons'
-
 type SelectVariantType = 'large' | 'small'
 
 export interface IOption {
@@ -74,7 +72,14 @@ export const Select = forwardRef<ElementRef<typeof S.Root>, ISelectProps>(
             <S.Content className={clsx(s.SelectContent)} position={'popper'}>
               <S.Viewport>
                 {options.map(option => (
-                  <S.Item className={clsx(s.SelectItem)} key={option.value} value={option.value}>
+                  <S.Item
+                    className={clsx(s.SelectItem, {
+                      [s.large]: variant === 'large',
+                      [s.small]: variant === 'small',
+                    })}
+                    key={option.value}
+                    value={option.value}
+                  >
                     <S.ItemText>
                       <span>{option.label}</span>
                     </S.ItemText>

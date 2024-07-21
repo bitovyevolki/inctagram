@@ -9,7 +9,12 @@ interface IProps {
 
 export const ELLIPSIS = 'ELLIPSIS'
 
-export const usePagination = ({ page, portionSize, siblingCount = 1, totalCount }: IProps) => {
+export const usePagination = ({
+  page,
+  portionSize,
+  siblingCount = 1,
+  totalCount,
+}: IProps): (number | string)[] => {
   const paginationRange = useMemo(() => {
     const totalPageCount = Math.ceil(totalCount / portionSize)
     const totalPageNumbers = siblingCount + 5
@@ -52,5 +57,5 @@ export const usePagination = ({ page, portionSize, siblingCount = 1, totalCount 
     }
   }, [page, totalCount, portionSize, siblingCount])
 
-  return { paginationRange }
+  return paginationRange || []
 }
