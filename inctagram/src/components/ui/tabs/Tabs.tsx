@@ -5,19 +5,16 @@ import s from './Tabs.module.scss'
 
 import { IOption } from '../select'
 
-type TabVariantType = 'blue' | 'dark'
-
 interface ITabsProps {
   defaultValue?: string
   onValueChange: (value: string) => void
   options: ({
-    disabled: boolean
+    disabled?: boolean
   } & IOption)[]
   value: string
-  variant: TabVariantType
 }
 
-export const Tabs = ({ defaultValue, onValueChange, options, value, variant }: ITabsProps) => {
+export const Tabs = ({ defaultValue, onValueChange, options, value }: ITabsProps) => {
   return (
     <T.Root
       className={s.TabsRoot}
@@ -29,8 +26,7 @@ export const Tabs = ({ defaultValue, onValueChange, options, value, variant }: I
         {options.map(t => (
           <T.Trigger
             className={clsx(s.TabsTrigger, {
-              [s.blue]: variant === 'blue',
-              [s.dark]: variant === 'dark',
+              [s.active]: t.value === value,
             })}
             key={t.value}
             value={t.value}
