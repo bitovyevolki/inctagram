@@ -1,14 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
+import { IOption } from '../select'
 import { Tabs } from './Tabs'
 
 const meta: Meta<typeof Tabs> = {
-  argTypes: {
-    variant: {
-      control: { type: 'radio' },
-      options: ['dark', 'blue'],
-    },
-  },
   component: Tabs,
   decorators: [
     Story => (
@@ -24,18 +19,16 @@ const meta: Meta<typeof Tabs> = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-const options = [
-  { disabled: false, label: '10', value: '10' },
-  { disabled: false, label: '20', value: '20' },
-  { disabled: false, label: '30', value: '30' },
-  { disabled: false, label: '50', value: '50' },
-  { disabled: false, label: '100', value: '100' },
+const options: ({ disabled: boolean } & IOption)[] = [
+  { disabled: false, label: 'General information', value: '1' },
+  { disabled: false, label: 'Devices', value: '2' },
+  { disabled: false, label: 'Account Management', value: '3' },
+  { disabled: false, label: 'My payments', value: '4' },
 ]
 
 export const Large: Story = {
   args: {
     options,
     value: options[0].value,
-    variant: 'blue',
   },
 }
